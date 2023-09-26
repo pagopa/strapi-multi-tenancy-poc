@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "sitos",
+  "info": {
+    "singularName": "sito",
+    "pluralName": "sitos",
+    "displayName": "Sito (Send)",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Pagine": {
+      "type": "dynamiczone",
+      "components": [
+        "pages.simple-page"
+      ]
+    }
+  }
+}

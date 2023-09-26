@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pages_fully_custom_pages",
+  "info": {
+    "displayName": "Fully Custom Page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Sezioni": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.example-page"
+    }
+  }
+}

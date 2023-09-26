@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_pages_simple_pages",
+  "info": {
+    "displayName": "Simple Page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

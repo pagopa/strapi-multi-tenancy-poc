@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_components_testings",
+  "info": {
+    "displayName": "Testing"
+  },
+  "options": {},
+  "attributes": {
+    "Test": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_components_new_comps",
+  "info": {
+    "displayName": "New Comp"
+  },
+  "options": {},
+  "attributes": {
+    "Testo": {
+      "type": "string"
+    }
+  }
+}

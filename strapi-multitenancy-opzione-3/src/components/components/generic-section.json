@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_generic_sections",
+  "info": {
+    "displayName": "Generic Section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "firmawebsites",
+  "info": {
+    "singularName": "firmawebsite",
+    "pluralName": "firmawebsites",
+    "displayName": "Website (Firma)",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Pagina": {
+      "type": "dynamiczone",
+      "components": [
+        "pages.fully-custom-page"
+      ]
+    }
+  }
+}
