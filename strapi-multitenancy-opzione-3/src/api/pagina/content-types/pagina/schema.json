@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paginas",
+  "info": {
+    "singularName": "pagina",
+    "pluralName": "paginas",
+    "displayName": "Pagine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Sezione": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.generic-section",
+        "pages.contact-page",
+        "sections.hero-section",
+        "sections.contact-form"
+      ]
+    },
+    "URL": {
+      "type": "string"
+    }
+  }
+}

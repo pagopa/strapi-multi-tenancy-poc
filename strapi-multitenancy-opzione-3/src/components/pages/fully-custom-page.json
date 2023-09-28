@@ -8,7 +8,7 @@
     "Sezione": {
       "type": "component",
       "repeatable": true,
-      "component": "components.generic-section"
+      "component": "sections.generic-section"
     }
   }
 }
