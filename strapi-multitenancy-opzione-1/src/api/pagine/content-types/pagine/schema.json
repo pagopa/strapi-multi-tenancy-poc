@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pagines",
+  "info": {
+    "singularName": "pagine",
+    "pluralName": "pagines",
+    "displayName": "Pagine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "private": true,
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Figlie": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sotto-pagine.sotto-pagine",
+      "mappedBy": "Pagina_Genitore"
+    },
+    "Ordine_Figlie_in_Navigazione": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pagine.pagine"
+    },
+    "Sezioni": {
+      "type": "dynamiczone",
+      "components": [
+        "sezioni.editorial",
+        "sezioni.hero",
+        "sezioni.accordion",
+        "sezioni.feature",
+        "sezioni.how-to"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_variabili_temas",
+  "info": {
+    "displayName": "Tema",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Tema": {
+      "type": "enumeration",
+      "enum": [
+        "Light",
+        "Dark"
+      ],
+      "default": "Light",
+      "required": true
+    }
+  }
+}

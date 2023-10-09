@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sotto_pagines",
+  "info": {
+    "singularName": "sotto-pagine",
+    "pluralName": "sotto-pagines",
+    "displayName": "SottoPagine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "Pagina_Genitore": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pagine.pagine",
+      "inversedBy": "Figlie"
+    },
+    "SottoPagina_Genitore": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sotto-pagine.sotto-pagine",
+      "inversedBy": "Figlie"
+    },
+    "Figlie": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sotto-pagine.sotto-pagine",
+      "mappedBy": "SottoPagina_Genitore"
+    },
+    "Visibile_in_Navigazione": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "Ordine_Figlie_in_Navigazione": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pagine.pagine"
+    },
+    "Sezioni": {
+      "type": "dynamiczone",
+      "components": [
+        "sezioni.accordion",
+        "sezioni.editorial",
+        "sezioni.feature",
+        "sezioni.hero",
+        "sezioni.how-to"
+      ],
+      "required": true
+    }
+  }
+}

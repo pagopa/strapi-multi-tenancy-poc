@@ -1,94 +1,61 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ComponentsButton extends Schema.Component {
-  collectionName: 'components_components_buttons';
+export interface SharedMetaSocial extends Schema.Component {
+  collectionName: 'components_shared_meta_socials';
   info: {
-    displayName: 'Button';
-    description: '';
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
   };
   attributes: {
-    Text: Attribute.String;
-    Style: Attribute.Enumeration<['Naked', 'Text', 'Outlined', 'Filled']>;
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Attribute.Media;
   };
 }
 
-export interface PagesContactPage extends Schema.Component {
-  collectionName: 'components_pages_contact_pages';
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
   info: {
-    displayName: 'Contact Page';
-    description: '';
+    displayName: 'seo';
+    icon: 'search';
   };
   attributes: {
-    Title: Attribute.String;
-    Form: Attribute.Component<'sections.contact-form'>;
-  };
-}
-
-export interface PagesFullyCustomPage extends Schema.Component {
-  collectionName: 'components_pages_fully_custom_pages';
-  info: {
-    displayName: 'Fully Custom Page';
-  };
-  attributes: {
-    Sezione: Attribute.Component<'sections.generic-section', true>;
-  };
-}
-
-export interface SectionsContactForm extends Schema.Component {
-  collectionName: 'components_components_contact_forms';
-  info: {
-    displayName: 'Contact Form';
-    description: '';
-  };
-  attributes: {
-    Nome: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Cognome: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Nome_Completo: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Email: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Telefono: Attribute.Boolean & Attribute.DefaultTo<false>;
-    Nome_ente: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface SectionsGenericSection extends Schema.Component {
-  collectionName: 'components_components_generic_sections';
-  info: {
-    displayName: 'Generic Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media;
-  };
-}
-
-export interface SectionsHeroSection extends Schema.Component {
-  collectionName: 'components_sections_hero_sections';
-  info: {
-    displayName: 'Hero Section';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.String;
-    Body: Attribute.RichText;
-    Image: Attribute.Media;
-    Main_CTA_Button: Attribute.Component<'components.button'>;
-    Secondary_CTA_Button: Attribute.Component<'components.button'>;
-    Dark_Mode: Attribute.Boolean;
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+        maxLength: 160;
+      }>;
+    metaImage: Attribute.Media;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    keywords: Attribute.Text;
+    metaRobots: Attribute.String;
+    structuredData: Attribute.JSON;
+    metaViewport: Attribute.String;
+    canonicalURL: Attribute.String;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
-      'components.button': ComponentsButton;
-      'pages.contact-page': PagesContactPage;
-      'pages.fully-custom-page': PagesFullyCustomPage;
-      'sections.contact-form': SectionsContactForm;
-      'sections.generic-section': SectionsGenericSection;
-      'sections.hero-section': SectionsHeroSection;
+      'shared.meta-social': SharedMetaSocial;
+      'shared.seo': SharedSeo;
     }
   }
 }
